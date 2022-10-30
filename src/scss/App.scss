@@ -1,0 +1,130 @@
+@import './Variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+}
+
+@mixin Button {
+    padding: 15px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    font-size: 38px;
+    background-color: $Light-grayish-orange;
+    cursor: pointer;
+    transition: 0.05s;
+
+    &:hover {
+        background-color: whitesmoke;
+    }
+
+    &:active{
+        border-width: 0;
+        transform: translateY(2.5px);
+    }
+}
+
+.app {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background-color: $main-background;
+    color: white;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        width: 500px;
+
+        .number-container {
+            font-size: 50px;
+            background-color: $screen-background;
+            padding: 32px;
+            border-radius: 10px;
+            height: 120px;
+            text-align: right;
+            overflow: hidden;
+        }
+
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            background-color: $toggle-backgorund;
+            border-radius: 10px;
+            padding: 30px;
+            gap: 15px;
+
+            .number-buttons {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 15px;
+    
+                .number-button {
+                    @include Button;
+                    border-bottom: 5px solid $Grayish-orange;
+                }
+    
+                .delete-button {
+                    @include Button;
+                    background-color: $Desaturated-dark-blue;
+                    color: white;
+                    font-size: 24px;
+                    border-bottom: 5px solid $Desaturated-dark-blue-shadow;
+
+                    &:hover{
+                        background-color: $Desaturated-dark-blue-hover;
+                    }
+                }
+            }
+
+            .reset-equal-container{
+                display: flex;
+                justify-content: flex-start;
+                gap: 15px;
+
+                .reset-button {
+                    @include Button;
+                    flex: 1;
+                    background-color: $Desaturated-dark-blue;
+                    color: white;
+                    font-size: 24px;
+                    border-bottom: 5px solid $Desaturated-dark-blue-shadow;
+
+                    &:hover{
+                        background-color: $Desaturated-dark-blue-hover;
+                    }
+                }
+
+                .equal-button {
+                    @include Button;
+                    flex: 1;
+                    background-color: $red;
+                    color: white;
+                    font-size: 24px;
+                    border-bottom: 5px solid $red-shadow;
+
+                    &:hover{
+                        background-color: $red-hover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (orientation: portrait) {
+    .app{
+        .container{
+            width: 350px;
+        }
+    }
+
+    button{
+        padding: 10px !important;
+    }
+}

@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 700;
+}
+
+.app {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #3a4764;
+  color: white;
+}
+
+.app .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  width: 500px;
+}
+
+.app .container .number-container {
+  font-size: 50px;
+  background-color: #182034;
+  padding: 32px;
+  border-radius: 10px;
+  height: 120px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.app .container .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #232c43;
+  border-radius: 10px;
+  padding: 30px;
+  gap: 15px;
+}
+
+.app .container .buttons .number-buttons {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+.app .container .buttons .number-buttons .number-button {
+  padding: 15px;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  font-size: 38px;
+  background-color: #eae3dc;
+  cursor: pointer;
+  -webkit-transition: 0.05s;
+  transition: 0.05s;
+  border-bottom: 5px solid #b4a597;
+}
+
+.app .container .buttons .number-buttons .number-button:hover {
+  background-color: whitesmoke;
+}
+
+.app .container .buttons .number-buttons .number-button:active {
+  border-width: 0;
+  -webkit-transform: translateY(2.5px);
+          transform: translateY(2.5px);
+}
+
+.app .container .buttons .number-buttons .delete-button {
+  padding: 15px;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  font-size: 38px;
+  background-color: #eae3dc;
+  cursor: pointer;
+  -webkit-transition: 0.05s;
+  transition: 0.05s;
+  background-color: #637097;
+  color: white;
+  font-size: 24px;
+  border-bottom: 5px solid #404e72;
+}
+
+.app .container .buttons .number-buttons .delete-button:hover {
+  background-color: whitesmoke;
+}
+
+.app .container .buttons .number-buttons .delete-button:active {
+  border-width: 0;
+  -webkit-transform: translateY(2.5px);
+          transform: translateY(2.5px);
+}
+
+.app .container .buttons .number-buttons .delete-button:hover {
+  background-color: #7584b3;
+}
+
+.app .container .buttons .reset-equal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 15px;
+}
+
+.app .container .buttons .reset-equal-container .reset-button {
+  padding: 15px;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  font-size: 38px;
+  background-color: #eae3dc;
+  cursor: pointer;
+  -webkit-transition: 0.05s;
+  transition: 0.05s;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #637097;
+  color: white;
+  font-size: 24px;
+  border-bottom: 5px solid #404e72;
+}
+
+.app .container .buttons .reset-equal-container .reset-button:hover {
+  background-color: whitesmoke;
+}
+
+.app .container .buttons .reset-equal-container .reset-button:active {
+  border-width: 0;
+  -webkit-transform: translateY(2.5px);
+          transform: translateY(2.5px);
+}
+
+.app .container .buttons .reset-equal-container .reset-button:hover {
+  background-color: #7584b3;
+}
+
+.app .container .buttons .reset-equal-container .equal-button {
+  padding: 15px;
+  color: black;
+  border-radius: 10px;
+  border: none;
+  font-size: 38px;
+  background-color: #eae3dc;
+  cursor: pointer;
+  -webkit-transition: 0.05s;
+  transition: 0.05s;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #d03f2f;
+  color: white;
+  font-size: 24px;
+  border-bottom: 5px solid #93261a;
+}
+
+.app .container .buttons .reset-equal-container .equal-button:hover {
+  background-color: whitesmoke;
+}
+
+.app .container .buttons .reset-equal-container .equal-button:active {
+  border-width: 0;
+  -webkit-transform: translateY(2.5px);
+          transform: translateY(2.5px);
+}
+
+.app .container .buttons .reset-equal-container .equal-button:hover {
+  background-color: #e24332;
+}
+
+@media (orientation: portrait) {
+  .app .container {
+    width: 350px;
+  }
+  button {
+    padding: 10px !important;
+  }
+}
+/*# sourceMappingURL=App.css.map */
