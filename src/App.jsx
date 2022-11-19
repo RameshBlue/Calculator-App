@@ -88,6 +88,11 @@ const App = () => {
     let str = operation.replaceAll("x", "*");
     let result = Calc.calculate(str);
 
+    if (result== null) {
+      numberContainerRef.current.innerHTML = "0";
+      return;
+    }
+
     if (!Number.isInteger(result)) {
       if (result.toString().includes(".")) {
         let newStr = result.toString().split(".")[1];
