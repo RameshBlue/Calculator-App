@@ -5,6 +5,10 @@ import { Howl, Howler } from 'howler';
 import clickSound from "./sounds/clickSound.mp3";
 import { useEffect } from 'react';
 
+const sound = new Howl({
+  src : [`${clickSound}`]
+});
+
 const App = () => {
 
   const numberContainerRef = useRef();
@@ -17,10 +21,7 @@ const App = () => {
     Howler.volume(1.0);
   },[])
 
-  function PlaySound(src) {
-    const sound = new Howl({
-      src
-    });
+  function PlaySound() {
     sound.play();
   }
 
@@ -36,7 +37,7 @@ const App = () => {
 
   const OnClick = (value) => {
 
-    PlaySound(clickSound);
+    PlaySound();
     switch (value) {
       case "DEL":
         Delete();
@@ -74,17 +75,17 @@ const App = () => {
     }
 
     SetOperation(numberContainerRef.current.innerHTML);
-    PlaySound(clickSound);
+    PlaySound();
   }
 
   const Reset = () => {
     SetOperation("0");
     numberContainerRef.current.innerHTML = "0";
-    PlaySound(clickSound);
+    PlaySound();
   }
 
   const Result = () => {
-    PlaySound(clickSound);
+    PlaySound();
     let str = operation.replaceAll("x", "*");
     let result = Calc.calculate(str);
 
