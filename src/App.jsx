@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import "./scss/App.css"
+import "./scss/App.scss"
 import Calc from 'ez-calculator'
 
 const App = () => {

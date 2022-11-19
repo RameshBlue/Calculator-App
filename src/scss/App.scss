@@ -44,7 +44,7 @@
         .number-container {
             font-size: 50px;
             background-color: $screen-background;
-            padding: 32px;
+            padding: 39px;
             border-radius: 10px;
             height: 120px;
             text-align: right;
@@ -117,14 +117,51 @@
     }
 }
 
-@media (orientation: portrait) {
+@media (max-width: 600px) {
     .app{
+       
         .container{
-            width: 350px;
+            width: 85%;
         }
     }
+}
 
-    button{
-        padding: 10px !important;
+@media (max-width: 400px) {
+    .app{
+        .container{
+            width: 95%;
+        }
+    }
+}
+
+@media (max-height: 670px) {
+    .app{
+        .container{
+            width: 400px;
+
+            .number-container{
+                height: 90px;
+                padding: 30px;
+            }
+
+            .buttons{
+                padding: 20px;
+
+                .number-buttons{
+                    .number-button{
+                        padding: 10px;
+                    }
+                    .delete-button{
+                        padding: 10px;
+                    }
+                    .equal-button{
+                        padding: 10px;
+                    }
+                    .reset-button{
+                        padding: 10px;
+                    }
+                }
+            }
+        }
     }
 }
