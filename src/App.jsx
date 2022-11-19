@@ -1,6 +1,9 @@
 import React, { useRef, useState } from 'react'
 import "./scss/App.scss"
 import Calc from 'ez-calculator'
+import { Howl, Howler } from 'howler';
+import clickSound from "./sounds/clickSound.mp3";
+import { useEffect } from 'react';
 
 const App = () => {
 
@@ -8,7 +11,18 @@ const App = () => {
 
   const values = [7, 8, 9, "DEL", 4, 5, 6, "+", 1, 2, 3, "-", ".", 0, "/", "x"]
 
-  const [operation,SetOperation] =  useState("0")
+  const [operation, SetOperation] = useState("0")
+
+  useEffect(()=>{
+    Howler.volume(1.0);
+  },[])
+
+  function PlaySound(src) {
+    const sound = new Howl({
+      src
+    });
+    sound.play();
+  }
 
   const CreateButtons = () => {
     return (
@@ -22,6 +36,7 @@ const App = () => {
 
   const OnClick = (value) => {
 
+    PlaySound(clickSound);
     switch (value) {
       case "DEL":
         Delete();
@@ -33,7 +48,7 @@ const App = () => {
     }
   }
 
-  const OnNumbersClick = (value)=>{
+  const OnNumbersClick = (value) => {
 
     if (numberContainerRef.current.innerHTML === "0") {
       numberContainerRef.current.innerHTML = value.toString();
@@ -57,24 +72,29 @@ const App = () => {
     } else {
       numberContainerRef.current.innerHTML = "0";
     }
-    
+
     SetOperation(numberContainerRef.current.innerHTML);
+    PlaySound(clickSound);
   }
 
   const Reset = () => {
     SetOperation("0");
     numberContainerRef.current.innerHTML = "0";
+    PlaySound(clickSound);
   }
 
-  const Result = ()=>{
-    let str = operation.replaceAll("x","*");
+  const Result = () => {
+    PlaySound(clickSound);
+    let str = operation.replaceAll("x", "*");
     let result = Calc.calculate(str);
 
     if (!Number.isInteger(result)) {
-      let newStr = result.toString().split(".")[1];
-      if (newStr.length>2) {
-        numberContainerRef.current.innerHTML = result.toFixed(2);
-        return;
+      if (result.toString().includes(".")) {
+        let newStr = result.toString().split(".")[1];
+        if (newStr.length > 2) {
+          numberContainerRef.current.innerHTML = result.toFixed(2);
+          return;
+        }
       }
     }
 
